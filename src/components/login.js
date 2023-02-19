@@ -16,7 +16,7 @@ function Login () {
   const ProceedLogin = (e) => { 
     e.preventDefault();
     
-        fetch("http://lankanew.onrender.com/admin/" + username).then((res)=>{
+        fetch("https://lankanew.onrender.com/admin/" + username).then((res)=>{
             return res.json();
         }).then((resp) => {                       
             if (Object.keys(resp).length === 0) {
