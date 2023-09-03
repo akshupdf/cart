@@ -27,7 +27,7 @@ function Nav () {
             <ul className="flex cursor-pointer">
                 <li className="p-2"><Link to="/">Home</Link></li>
                 <li className="p-2"><Link to="/product">Products</Link></li>
-                
+                <li className="p-2"><Link to="/threedproducts">3D Products</Link></li>
                 <li className="p-2"><Link to="/login">Login</Link></li>
             </ul>
 
