@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from "react";
-import axios from "axios";
+import { useContext } from "react";
+// import axios from "axios";
 // import Sidenav from "./sidenav";
 import CartContext from "../context/cart/CartContext";
 import React, { useRef } from "react";
@@ -13,26 +13,26 @@ import ModelViewerV2 from "./modelLoader";
 // import ModelViewer from "./shirt";
 import { Link } from "react-router-dom";
 
-function ThreeDProducts(product) {
+function ThreeDProducts() {
   const { addToCart } = useContext(CartContext);
 
-  const [data, setData] = useState("");
+  // const [data, setData] = useState("");
 
-  useEffect(() => {
-    setData(data);
-  }, [data]);
+  // useEffect(() => {
+  //   setData(data);
+  // }, [data]);
 
-  const getData = () => {
-    axios
-      .get("https://fakestoreapi.com/products/category/men's%20clothing")
-      .then((res) => {
-        setData(res.data);
-      });
-  };
+  // const getData = () => {
+  //   axios
+  //     .get("https://fakestoreapi.com/products/category/men's%20clothing")
+  //     .then((res) => {
+  //       setData(res.data);
+  //     });
+  // };
 
-  useEffect(() => {
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   const gltf = useLoader(GLTFLoader, "./mug.glb");
   const gltf1 = useLoader(GLTFLoader, "./airj.glb");

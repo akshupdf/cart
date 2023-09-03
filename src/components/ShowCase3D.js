@@ -5,6 +5,7 @@ import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import "../App.css";
 import ModelViewerV2 from "./modelLoader";
+import { Link } from "react-router-dom";
 
 // import ModelViewer from "../components/bottles";
 
@@ -20,7 +21,7 @@ function ShowCase3d () {
 
     return (
         <div>
-         
+         <p><Link to="/threedproducts">Back</Link></p>
         <div className="flex">
   
     <div className='w-[80vh] h-[80vh]  shadow-2xl pt-10 rounded-xl italic bg-[#6b7280] mt-10'>
