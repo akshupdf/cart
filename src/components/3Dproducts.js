@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import Sidenav from "./sidenav";
+// import Sidenav from "./sidenav";
 import CartContext from "../context/cart/CartContext";
 import React, { useRef } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
@@ -10,7 +10,7 @@ import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import "../App.css";
 import ModelViewerV2 from "./modelLoader";
-import ModelViewer from "./shirt";
+// import ModelViewer from "./shirt";
 import { Link } from "react-router-dom";
 
 function ThreeDProducts(product) {

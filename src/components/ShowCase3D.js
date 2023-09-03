@@ -1,19 +1,17 @@
 
-import React, { Suspense , useState} from "react";
+import React from "react";
 
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import "../App.css";
 import ModelViewerV2 from "./modelLoader";
-import { Link } from "react-router-dom";
+
 // import ModelViewer from "../components/bottles";
 
 
 
 function ShowCase3d () {
 
-
-    const [showDetails, setShowDetails] = useState(false);
 
 //   const handleToggleDetails = () => {
 //     setShowDetails(!showDetails);
