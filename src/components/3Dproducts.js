@@ -1,43 +1,14 @@
 import { useContext } from "react";
-// import axios from "axios";
-// import Sidenav from "./sidenav";
 import CartContext from "../context/cart/CartContext";
-import React, { useRef } from "react";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { useLoader } from "react-three-fiber";
-
+import React from "react";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import "../App.css";
 import ModelViewerV2 from "./modelLoader";
-// import ModelViewer from "./shirt";
 import { Link } from "react-router-dom";
 
 function ThreeDProducts() {
   const { addToCart } = useContext(CartContext);
-
-  // const [data, setData] = useState("");
-
-  // useEffect(() => {
-  //   setData(data);
-  // }, [data]);
-
-  // const getData = () => {
-  //   axios
-  //     .get("https://fakestoreapi.com/products/category/men's%20clothing")
-  //     .then((res) => {
-  //       setData(res.data);
-  //     });
-  // };
-
-  // useEffect(() => {
-  //   getData();
-  // }, []);
-
-  const gltf = useLoader(GLTFLoader, "./mug.glb");
-  const gltf1 = useLoader(GLTFLoader, "./airj.glb");
-  const gltf2 = useLoader(GLTFLoader, "./jacket2.glb");
-  const modelRef = useRef();
 
   return (
     <div className="flex w-[100%]">
@@ -53,12 +24,7 @@ function ThreeDProducts() {
 
                   <directionalLight intensity={2} position={[2.5, 8, 5]} />
 
-                  <primitive
-                    ref={modelRef}
-                    object={gltf2.scene}
-                    scale={0.1}
-                    rotation={[0, Math.PI / 2, 0]}
-                  />
+                  <ModelViewerV2 src="./jacket2.glb" />
 
                   <OrbitControls enableZoom={true} />
                 </Canvas>
@@ -79,11 +45,17 @@ function ThreeDProducts() {
                 <button
                   href=""
                   className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  onClick={() => addToCart({category: "men's clothing",
-    description: "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-    id: 1,
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX3KA-0CkxqrpniJpJqP1OCC22hh_9Ul9ftA&usqp=CAU",
-    price: 30})}
+                  onClick={() =>
+                    addToCart({
+                      category: "men's clothing",
+                      description:
+                        "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+                      id: 1,
+                      image:
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX3KA-0CkxqrpniJpJqP1OCC22hh_9Ul9ftA&usqp=CAU",
+                      price: 30,
+                    })
+                  }
                 >
                   Add to cart
                 </button>
@@ -104,12 +76,7 @@ function ThreeDProducts() {
 
                   <directionalLight intensity={2} position={[2.5, 8, 5]} />
 
-                  <primitive
-                    ref={modelRef}
-                    object={gltf1.scene}
-                    scale={0.1}
-                    rotation={[0, Math.PI / 2, 0]}
-                  />
+                  <ModelViewerV2 src="./airj.glb" />
 
                   <OrbitControls enableZoom={true} />
                 </Canvas>
@@ -123,7 +90,7 @@ function ThreeDProducts() {
               </div>
 
               <div className="flex items-center justify-between">
-              <span className="text-3xl font-bold text-red-700 line-through">
+                <span className="text-3xl font-bold text-red-700 line-through">
                   100$
                 </span>
                 <span className="text-3xl font-bold text-gray-900 dark:text-black mr-auto">
@@ -133,8 +100,13 @@ function ThreeDProducts() {
                 <button
                   href=""
                   className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  onClick={() => addToCart({image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNx4CLYMpXZ9qP9s0BovsntUEhw-snoXT-RQ&usqp=CAU",
-    price: 93})}
+                  onClick={() =>
+                    addToCart({
+                      image:
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNx4CLYMpXZ9qP9s0BovsntUEhw-snoXT-RQ&usqp=CAU",
+                      price: 93,
+                    })
+                  }
                 >
                   Add to cart
                 </button>
@@ -155,12 +127,7 @@ function ThreeDProducts() {
 
                   <directionalLight intensity={2} position={[2.5, 8, 5]} />
 
-                  <primitive
-                    ref={modelRef}
-                    object={gltf.scene}
-                    scale={0.1}
-                    rotation={[0, Math.PI / 2, 0]}
-                  />
+                  <ModelViewerV2 src="./mug.glb" />
 
                   <OrbitControls enableZoom={true} />
                 </Canvas>
@@ -181,10 +148,13 @@ function ThreeDProducts() {
                 <button
                   href=""
                   className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  onClick={() => addToCart({image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvXwaDQX41-uahB_3rn6paJzTpRN_Qm0hNEg&usqp=CAU",
-    price: 10
-
-                  })}
+                  onClick={() =>
+                    addToCart({
+                      image:
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvXwaDQX41-uahB_3rn6paJzTpRN_Qm0hNEg&usqp=CAU",
+                      price: 10,
+                    })
+                  }
                 >
                   Add to cart
                 </button>
@@ -205,7 +175,7 @@ function ThreeDProducts() {
 
                   <directionalLight intensity={2} position={[2.5, 8, 5]} />
 
-                  <ModelViewerV2 />
+                  <ModelViewerV2 src="./flipflop.glb" />
 
                   <OrbitControls enableZoom={true} />
                 </Canvas>
@@ -217,7 +187,9 @@ function ThreeDProducts() {
                   Nice Flip-Flop
                 </h5>
               </div>
-              <li className="list-none"><Link to="/threed">View Product</Link></li>
+              <li className="list-none">
+                <Link to="/threed">View Product</Link>
+              </li>
               <div className="flex items-center justify-between">
                 <span className="text-3xl font-bold text-gray-900 dark:text-black">
                   15$
@@ -226,8 +198,13 @@ function ThreeDProducts() {
                 <button
                   href=""
                   className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  onClick={() => addToCart({image: "https://imagescdn.planetfashion.in/img/app/product/5/590674-5414291.jpg?auto=format",
-    price: 15})}
+                  onClick={() =>
+                    addToCart({
+                      image:
+                        "https://imagescdn.planetfashion.in/img/app/product/5/590674-5414291.jpg?auto=format",
+                      price: 15,
+                    })
+                  }
                 >
                   Add to cart
                 </button>

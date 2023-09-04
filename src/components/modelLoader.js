@@ -2,8 +2,8 @@ import React, { useRef } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useLoader } from 'react-three-fiber';
 
-const ModelViewerV2 = () => {
-  const gltf = useLoader(GLTFLoader, './flipflop.glb');
+const ModelViewerV2 = ({ src }) => {
+  const gltf = useLoader(GLTFLoader, src);
   const modelRef = useRef();
 
   return (
